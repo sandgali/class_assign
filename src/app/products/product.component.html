@@ -48,8 +48,10 @@
                             <td>{{product.releaseDate}}</td>
                             <td [ngStyle]="{'background-color': product.price>20?'red':'green'}">
                                 {{product.price|currency}}</td>
-                            <td>{{product.starRating}}<star-comp [rating]="product.starRating"></star-comp></td>
-                            <td>{{product.description}}</td></tr>
+                            <td>{{product.starRating}}<star-comp [rating]="product.starRating"
+                                
+                                ></star-comp></td>             
+                                                        <td>{{product.description}}</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -58,13 +60,15 @@
                 <h1>This is List View</h1>
              <ul *ngFor="let product of products | ProductFilter:filterProduct">
                  <li><img [src]="product.imageUrl" /></li>
-                 <li><p>ID:{{product.productId}}</p></li>
-                  <li><p>Name:{{product.productName | nameUpper}}</p></li>
-                  <li><p>code:{{product.productCode | lowercase}}</p></li>
-                  <li><p>Releasedate:{{product.releaseDate}}</p></li>
-                  <li><p>Price:{{product.price|currency}}</p></li>
-                <li><p>Rating:{{product.starRating}}</p></li>
-                <li><p>desc:{{product.description}}</p><br /></li>
+                 <li>ID:{{product.productId}}</li>
+                  <li>Name:{{product.productName | nameUpper}}</li>
+                  <li>{{product.productCode | lowercase}}</li>
+                  <li>{{product.releaseDate}}</li>
+                  <li>{{product.price|currency}}</li>
+                  <li>{{product.starRating}}<star-comp [rating]="product.starRating"
+                                
+                    ></star-comp></li>
+                               <li>{{product.description}}<br /></li>
              
          </ul>
          </div>
